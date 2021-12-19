@@ -1,0 +1,257 @@
+/* @import url("https://fonts.googleapis.com/earlyaccess/cwtexyen.css"); */
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+TC&amp");
+body,.searchName_button { 
+    font-family: 'Noto Serif TC', serif;
+    letter-spacing: 2px;
+}
+
+/* 隱藏scrollerbar */
+body.no_scrollerbar{
+    overflow:hidden
+}
+
+.nav {
+    background-color: #FFFFFF;
+    color: #000000;
+    text-align: center;
+    font-size: 25px;
+    padding: 20px 0 20px 0;
+}
+
+    .nav > li {
+        display: inline-block;
+        padding: 0 25px 0 25px;
+    }
+
+        .nav > li > a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+            .nav > li > a:hover {
+                color: #c1c1c1;
+            }
+
+.logoName {
+    color: #000000;
+    float: left;
+    font-size: 30px;
+    padding-left: 20%;
+    font-weight: bold;
+}
+#left_side {
+    position: relative;
+    margin-top: 30;
+    background-color:#f8d4a8;
+}
+img {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.circle_img:hover{
+    width: 130px;
+    height: 130px;
+}
+
+.img_text{
+    font-size: 25px;
+    padding-top: 20;
+    float: left;
+}
+#img_ul{
+    display: flex;
+}
+.img_li{
+    display: inline-block;
+    width: calc(100%/4);
+}
+#ul_div{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 30;
+}
+.placeName_ul{
+    display: flex;
+}
+.placeName_li{
+    display: inline-block;
+    width: calc(100%/4);
+}
+.placeName_div{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 30;
+}
+.searchName{
+    margin-top: 20;
+}
+
+.searchName_button {
+    position: relative;
+    left: 30;
+    border: 0;
+    background-color: #d2a063;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 13px 14px;
+    width: 120px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+    .searchName_button:hover {
+        color: #000000;
+        background-color: #fff;
+        border: 2px #bc6400 solid;
+    }
+.left_head{
+    left: 150;
+    font-size: 25;
+}
+#img_crown{
+    float: left;
+    position: relative;
+    left: 60;
+    height: 100px;
+    width: 100px;
+    transform: rotate(-20deg);
+}
+.search_content{
+    position: relative;
+    left: 200;
+}
+.search_text{
+    font-size: 25;
+    padding-bottom: 30;
+}
+.slider_container{
+    /* slider_container之間20px，置中 */
+    margin: 40px auto;
+    width: 400px;
+    height: 380px;
+    position: relative;
+    border: 20px solid;
+    border-color: #fff;
+    background-color: #f5f5f5;
+    box-shadow: #666 0 0 5px;
+}
+.restaurant_title{
+    color: #96540a;
+    font-size: 30;
+    font-weight: bold;
+    margin-left: 150;
+}
+.photo{
+    height: 380 ;
+    width: 400;
+}
+#FOOTER {
+    width: auto;
+    background-color: #d2a063;
+}
+#FOOTER h3 {
+    font-size: 25px;
+    margin: auto;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.tableware{
+    position: relative;
+    left: 70;
+    bottom: 20;
+    height: 80;
+    width: 80;
+}
+
+.slider_container div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 定義透明度，數值越小，透明度越高(0-1) */
+    opacity: 0;
+}
+.slider_container div {
+    /* 圖片週期 */
+    animation: round 20s linear infinite;
+}
+        
+@keyframes round {
+    /* 100%/14s=7.14 */
+    0%{
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+        /*淡入*/
+    }
+    40% {
+        opacity: 1;
+        /*靜止*/
+    }
+    60%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100.% {
+        opacity: 0;
+        /*淡出*/
+    }
+}          
+.slider_container div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slider_container div:nth-child(2) {
+    /* 週期20秒，從第5秒開始 */
+    animation-delay: 5s;
+}
+
+.slider_container div:nth-child(3) {
+    animation-delay: 10s;
+}
+
+.slider_container div:nth-child(4) {
+    animation-delay: 15s;
+}
+.slider_container span {
+    color: #000;
+    background: #fff;
+    position: absolute;
+    left: 0%;
+    top: 280px;
+    width: 400px;
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+    /* 行高 */
+    line-height: 100px;
+    transform:scaleY(0);
+    /* 緩入緩出 */
+    transition: all 0.5s ease-in-out;
+}
+/* 滑鼠移到圖片上，span出現 */
+.slider_container:hover span {
+    width: 100%;
+    /* scaleY(m)指定元素由參考點縱向縮放 m 倍 */
+    transform:scaleY(1);
+}
+.slider_container:hover div {
+    /* 定義動畫運行或暫停 */
+    animation-play-state: paused;
+}
+.fixed{
+    position: fixed;
+    bottom: 10;
+    right: 10;
+}
+.placeName{
+    display: block;
+}
+
